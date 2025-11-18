@@ -84,7 +84,6 @@ const Island = ({ isRotating, setIsRotating,setCurrentStage, ...props }) => {
       islandRef.current.rotation.y += rotationSpeed.current;
     } else {
       const rotation = islandRef.current.rotation.y;
-      console.log(isRotating)
       /**
        * Normalize the rotation value to ensure it stays within the range [0, 2 * Math.PI].
        * The goal is to ensure that the rotation value remains within a specific range to
