@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/foxs-islands-163b68e09fcc47618450150be77
 Title: Fox's islands
 */
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, use } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
@@ -15,14 +15,94 @@ import { a } from "@react-spring/three";
 
 import islandscene from "../assets/3d/island.glb";
 
-const Island = ({ rotating, setIsRotating, ...props }) => {
+const Island = ({ isRotating, setIsRotating, ...props }) => {
   const islandRef = useRef();
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(islandscene);
 
   const lastX = useRef(0);
-  const rotationSpeed = useRef(0);
-  const dampingFactor = 0.95;
+  const rotationVelocity = useRef(0);
+  const dampingFactor = 0.83; 
+
+  const handlePointerDown = (e) => {
+    e.stopPropagation();
+    setIsRotating(true);
+
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    lastX.current = clientX;
+  };
+
+  const handlePointerUp = () => {
+    setIsRotating(false);
+  };
+
+  const handlePointerMove = (e) => {
+    if (!isRotating) return;
+
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const delta = (clientX - lastX.current) / viewport.width;
+
+    
+    rotationVelocity.current = delta * 0.15; 
+
+    lastX.current = clientX;
+  };
+
+  
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowLeft") {
+      rotationVelocity.current = -0.05; // smooth left rotation
+      setIsRotating(true);
+    }
+
+    if (e.key === "ArrowRight") {
+      rotationVelocity.current = 0.05; // smooth right rotation
+      setIsRotating(true);
+    }
+  };
+
+  const handleKeyUp = (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      setIsRotating(false); // allow damping to take over
+    }
+  };
+
+  useFrame(() => {
+    const island = islandRef.current;
+    if (!island) return;
+
+    // Apply smooth velocity to rotation
+    island.rotation.y += rotationVelocity.current;
+
+    // Apply damping when user stops dragging
+    rotationVelocity.current *= dampingFactor;
+
+    // Remove tiny floating values
+    if (Math.abs(rotationVelocity.current) < 0.0001) {
+      rotationVelocity.current = 0;
+    }
+  });
+
+  useEffect(() => {
+    const canvas = gl.domElement;
+
+    canvas.addEventListener("pointerdown", handlePointerDown);
+    canvas.addEventListener("pointerup", handlePointerUp);
+    canvas.addEventListener("pointermove", handlePointerMove);
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keyup", handleKeyUp);
+
+    return () => {
+      canvas.removeEventListener("pointerdown", handlePointerDown);
+      canvas.removeEventListener("pointerup", handlePointerUp);
+      canvas.removeEventListener("pointermove", handlePointerMove);
+
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [gl, viewport]);
+
   return (
     <a.group ref={islandRef} {...props}>
       <mesh
@@ -63,5 +143,6 @@ const Island = ({ rotating, setIsRotating, ...props }) => {
     </a.group>
   );
 };
+
 
 export default Island;
