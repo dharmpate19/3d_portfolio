@@ -5,13 +5,11 @@ const TimelineItem = ({ exp, index }) => {
 
   return (
     <div
-      className={`relative w-full flex ${
-        leftSide ? "justify-start" : "justify-end"
-      }`}
+      className={`relative w-full flex justify-end md:${leftSide ? "justify-start" : "justify-end"}`}
     >
       {/* Dot */}
       <div
-        className="absolute left-1/2 top-1/2 
+        className="absolute left-[1.1rem]  md:left-1/2 top-1/2 
              -translate-x-1/2 -translate-y-1/2
              w-5 h-5 rounded-full 
              border-2 border-white shadow-lg z-20"
@@ -21,7 +19,7 @@ const TimelineItem = ({ exp, index }) => {
       {/* Card */}
       <div
         className={`
-          w-[45%] p-6 bg-white dark:bg-gray-900 rounded-xl shadow-xl relative
+          w-[90%] md:w-[45%] p-6 bg-white dark:bg-gray-900 rounded-xl shadow-xl relative
           transition-all duration-700 ease-out animate-fadeSlide
           ${leftSide ? "slide-left" : "slide-right"}
         `}

@@ -19,7 +19,7 @@ const About = () => {
       </div>
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
-        <div className="mt-16 flex flex-wrap gap-12">
+        <div className="mt-16 flex flex-wrap gap-12 justify-center md:justify-start">
           {skills.map((skill) => (
             <div key={skill.name} className="block-container w-20 h-20">
               <div className="btn-back rounded-xl" />
@@ -46,7 +46,7 @@ const About = () => {
         {/* ⭐ Animated Vertical Timeline */}
         <div className="relative mt-14 max-w-4xl mx-auto">
           {/* Animated line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-1 h-full pointer-events-none">
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 w-1 h-full pointer-events-none">
             <div className="absolute left-1/2 -translate-x-1/2 -top-3 w-5 h-5 bg-gray-400 rounded-full z-20" />
             <div className="absolute inset-0 bg-gray-300 dark:bg-gray-700 z-0" />
             <div className="absolute inset-0 overflow-hidden z-10">
