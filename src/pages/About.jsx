@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { experiences, skills } from "../constants";
-import TimelineItem from "../components/TimeLineItem";
+import TimelineItem from "../components/TimelineItem";
 
 const About = () => {
   return (
