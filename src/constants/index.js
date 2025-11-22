@@ -202,7 +202,7 @@ export const experiences = [
         title: "Web Developer",
         company_name: "Multidots",
         icon: multidots,
-        iconBg: "#edf857ff",
+        iconBg: "#e9ecb5ff",
         date: "Jan 2024 - Jan 2024",
         points: [
             "Developed custom WordPress themes and plugins, delivering tailored functionality to meet client requirements.",
