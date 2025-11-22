@@ -190,7 +190,7 @@ export const experiences = [
         title: "Web Developer",
         company_name: "Beats Immigration",
         icon: beatsimmigration,
-        iconBg: "#f56856ff",
+        iconBg: "#ffb6acff",
         date: "Jan 2025 - Nov 2025",
         points: [
             "Maintained and optimized the company's WordPress website, ensuring fast performance, improved UI/UX, and smooth functionality across all pages.",

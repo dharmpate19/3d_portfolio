@@ -6,7 +6,7 @@ import tesla from './tesla.png'
 import logo from './logo.svg'
 import multidots from './multidots.png'
 import beatsimmigration from './beatsimmigration.png'
-import elsner from './elsner.png'
+import elsner from './elsnerlogo.svg'
 
 export {
     hero,
