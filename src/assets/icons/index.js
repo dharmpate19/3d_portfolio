@@ -26,6 +26,19 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import python from './python.png'
+import PostgreSQL from './postgresql.png'
+import MySQL from './mysql.png'
+import GraphQL from './graphql.png'
+import Docker from './docker.png'
+import Kubernetes from './kubernetes.png'
+import Jenkins from './jenkins.png'
+import GitLab from './gitlab.png'
+import AWS from './aws.png'
+import Vercel from './vercel.png'
+import PHP from './php.png'
+import wordpress from './wordpress.png'
+
 
 export {
     css,
@@ -55,5 +68,18 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    python,
+    PostgreSQL,
+    MySQL,
+    GraphQL,
+    Docker,
+    Kubernetes,
+    Jenkins,
+    GitLab,
+    AWS,
+    Vercel,
+    PHP,
+    wordpress,
+
 }
