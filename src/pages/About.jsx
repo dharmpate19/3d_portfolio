@@ -39,7 +39,6 @@ const About = () => {
           ))}
         </div>
       </div>
-      {/* Social Profiles */}
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text ">Find Me Online</h3>
 
@@ -52,7 +51,6 @@ const About = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-5 rounded-xl dark:bg-gray-800 shadow-md hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 hover:-translate-y-1"
             >
-              {/* Icon */}
               <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex justify-center items-center">
                 <img
                   src={item.iconUrl}
@@ -61,7 +59,6 @@ const About = () => {
                 />
               </div>
 
-              {/* Text */}
               <div className="flex flex-col">
                 <span className="text-lg font-semibold text-gray-800 dark:text-gray-100">
                   {item.name}
