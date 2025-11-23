@@ -205,6 +205,9 @@ body:has(.card[data-color="green"]:hover) {
   animation-delay: 0.3s;
 }
 @media not all and (min-width: 768px) {
+    .header{
+      padding: 5px;
+    }
     .cta{
       align-items: flex-start;
       gap: 10px;

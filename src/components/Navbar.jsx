@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,11 +10,11 @@ const Navbar = () => {
       >
         <p className="blue-gradient_text">DP</p>
       </NavLink>
-      <nav className="flex text-lg gap-7 font-medium">
+      <nav className="flex text-lg gap-7 font-medium  rounded-lg bg-white items-center justify-center flex font-bold shadow-md px-5 py-2">
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+            isActive ? "blue-gradient_text"  :"text-black"
           }
         >
           About
@@ -22,7 +22,7 @@ const Navbar = () => {
         <NavLink
           to="/projects"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+            isActive ? "blue-gradient_text" : "text-black"
           }
         >
           Projects
@@ -30,7 +30,7 @@ const Navbar = () => {
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? "text-blue-500" : "text-black"
+            isActive ? "blue-gradient_text" : "text-black"
           }
         >
           Contact
