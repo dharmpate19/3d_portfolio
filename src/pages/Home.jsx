@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Island from "../models/Island";
@@ -7,9 +7,26 @@ import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
 
+import sakura from "../assets/sakura.mp3";
+import { soundoff, soundon } from "../assets/icons";
+
 const Home = () => {
+  const audioRef = useRef(new Audio(sakura));
+  audioRef.current.volumen = 0.5;
+  audioRef.current.loop = true;
+
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    }
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);
 
   const adjustIslandForScreenSize = () => {
     let screenScale;
@@ -45,7 +62,9 @@ const Home = () => {
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
   return (
     <section className="w-full h-screen touch-none relative">
-      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">{currentStage && <HomeInfo currentStage={currentStage} />}</div>
+      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
       <Canvas
         className={`w-full h-screen touch-none bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
@@ -61,7 +80,7 @@ const Home = () => {
             intensity={1}
           />
           <Bird />
-          <Sky isRotating={isRotating}/>
+          <Sky isRotating={isRotating} />
           <Island
             position={islandPosition}
             scale={islandScale}
@@ -73,11 +92,19 @@ const Home = () => {
           <Plane
             isRotating={isRotating}
             position={planePosition}
-            rotation={[0,20.1,0]}
+            rotation={[0, 20.1, 0]}
             scale={planeScale}
           />
         </Suspense>
       </Canvas>
+      <div className="absolute bottom-2 left-2">
+        <img
+          src={!isPlayingMusic ? soundoff : soundon}
+          alt="sound"
+          className="w-10 h-10 cursor-pointer object-contain"
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
+      </div>
     </section>
   );
 };
