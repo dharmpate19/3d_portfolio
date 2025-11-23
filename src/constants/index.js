@@ -23,7 +23,6 @@ import {
     react,
     redux,
     sass,
-    summiz,
     tailwindcss,
     typescript,
     python,
