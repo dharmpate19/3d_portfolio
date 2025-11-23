@@ -178,6 +178,9 @@ body:has(.card[data-color="green"]:hover) {
   box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
+.cta{
+  margin: 20px 0;
+}
 
 @keyframes flow {
   0% { transform: translateY(-100%); }
@@ -216,7 +219,7 @@ body:has(.card[data-color="green"]:hover) {
       gap: 10px;
     }
     .cta-text {
-        font-size: 20px;
+        font-size: 19px;
         text-align: left;
     }
 }

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { projects } from "../constants";
+import CTA from "../components/CTA"
 
 const Projects = () => {
   const cardRefs = useRef([]);
@@ -120,6 +121,9 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      <hr className="border-slate-200"/>
+      <CTA/>
     </section>
   );
 };
