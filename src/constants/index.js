@@ -1,9 +1,16 @@
-import { meta, shopify, starbucks, tesla, multidots, beatsimmigration, elsner } from "../assets/images";
 import {
-    car,
+    multidots, 
+    beatsimmigration, 
+    elsner, 
+    devevents, 
+    contactmanager,
+    chatbot,
+    contactmanagernext,
+    amazonproject
+} from "../assets/images";
+import {
     contact,
     css,
-    estate,
     express,
     git,
     github,
@@ -11,18 +18,13 @@ import {
     javascript,
     linkedin,
     mongodb,
-    motion,
-    mui,
     nextjs,
     nodejs,
-    pricewise,
     react,
     redux,
     sass,
-    snapgram,
     summiz,
     tailwindcss,
-    threads,
     typescript,
     python,
     PostgreSQL,
@@ -232,45 +234,43 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
+        iconUrl: devevents,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        name: 'Dev Events (Next.js)',
+        description: 'Built RESTful API endpoints, integrated Cloudinary for image uploads, deployed on Vercel, and added Post Hog analytics.',
+        link: 'https://devevent-project-nextjs.vercel.app/',
+        github: 'https://github.com/dharmpate19/nextJs/tree/main/dev-event'
     },
     {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
+        iconUrl: chatbot,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'Chat Bot (React.js)',
+        description: 'React frontend app with live chatbot functionality and error handling, fetching responses from external libraries.',
+        link: 'https://mern-stack-ten-mocha.vercel.app/',
+        github: 'https://github.com/dharmpate19/mern-stack/tree/main/reactJs-projects/chatbot-project'
     },
     {
-        iconUrl: snapgram,
+        iconUrl: amazonproject,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'Amazon Ecommerce (MERN STACK)',
+        description: 'Product listings, search functionality, cart management, and responsive design mimicking Amazon UI.',
+        link: 'https://ecommerce-5tn4.onrender.com/',
+        github: 'https://github.com/dharmpate19/mern-stack/tree/main/reactJs-projects/ecommerce-project',
     },
     {
-        iconUrl: estate,
+        iconUrl: contactmanagernext,
         theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        name: 'Contact Manager (Next.js – JSON Server)',
+        description: 'Backend API with authentication and CRUD operations for contacts.',
+        link: 'https://next-js-a6o1.vercel.app',
+        github: 'https://github.com/dharmpate19/nextJs/tree/main/contact-manager'
     },
     {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+        iconUrl: contactmanager,
+        theme: 'btn-back-green',
+        name: 'Contact Manager (Node.js)',
+        description: 'Backend API with JWT authentication and CRUD operations for contacts.',
+        link: '#',
+        github: 'https://github.com/dharmpate19/mern-stack/tree/main/nodeJs-projects/contact-manager'
+    },
 ];
