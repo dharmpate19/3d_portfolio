@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { experiences, skills } from "../constants";
 import TimelineItem from "../components/TimelineItem";
+import CTA from "../components/CTA";
 
 const About = () => {
   return (
@@ -21,7 +22,7 @@ const About = () => {
         <h3 className="subhead-text">My Skills</h3>
         <div className="mt-16 flex flex-wrap gap-12 justify-center md:justify-start">
           {skills.map((skill) => (
-            <div key={skill.name} className="block-container w-20 h-20">
+            <div key={skill.name} className="block-container w-10 h-10 md:w-20 md:h-20">
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -61,6 +62,8 @@ const About = () => {
           </div>
         </div>
       </div>
+      <hr className="border-slate-200" />
+      <CTA/>
     </section>
   );
 };

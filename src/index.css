@@ -204,3 +204,13 @@ body:has(.card[data-color="green"]:hover) {
 .slide-right {
   animation-delay: 0.3s;
 }
+@media not all and (min-width: 768px) {
+    .cta{
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .cta-text {
+        font-size: 20px;
+        text-align: left;
+    }
+}
